@@ -1,4 +1,5 @@
 const express = require('express')
+const moviesRouter = require('./movies/movies.router')
 
 const app = express()
 
@@ -12,7 +13,7 @@ app.get('/', (req, res) => {
     })
 })
 
-
+app.use('/api/v1', moviesRouter)
 
 app.listen(9000, () => {
     console.log('Server started at: http://localhost:9000')
